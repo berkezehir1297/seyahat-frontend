@@ -1,0 +1,60 @@
+/* Ana Görsel Bölümü (Arama kutusunun arkasındaki resim) */
+.hero-section {
+  height: 45vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+              url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+/* Arama Kutusu Ayarları */
+.search-box {
+  max-width: 600px;
+  width: 100%;
+}
+
+.search-box input {
+  border-radius: 50px 0 0 50px;
+  padding-left: 25px;
+}
+
+.search-box button {
+  border-radius: 0 50px 50px 0;
+  padding-right: 25px;
+}
+
+.search-box input:focus {
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+
+/* Kart Efektleri */
+.destination-card, .hover-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.destination-card:hover, .hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* Kart Resim Ayarları */
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  padding: 0; /* Padding'i 0 yaptık ki resim tam otursun, istersen 10 yapabilirsin */
+}
+
+/* Navbar Ekstra Stil */
+.navbar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(13, 110, 253, 0.9) !important;
+}

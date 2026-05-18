@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-5">
+    <div>
+      <h2 class="fw-bold text-primary">Keşfedilmeyi Bekleyen Oteller</h2>
+      <p class="text-muted">Senin için seçtiğimiz en popüler destinasyonlar.</p>
+    </div>
+    <button class="btn btn-outline-secondary rounded-pill" routerLink="/dashboard">
+      <i class="bi bi-arrow-left me-2"></i>Dashboard'a Dön
+    </button>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let otel of otelListesi">
+      <div class="card h-100 border-0 shadow-sm hover-card">
+        <div class="position-relative">
+          <img [src]="otel.resim" class="card-img-top" [alt]="otel.ad" 
+               style="height: 220px; object-fit: cover; border-radius: 15px 15px 0 0;">
+          
+          <span class="badge bg-white text-dark position-absolute top-0 end-0 m-3 shadow-sm">
+             5 ⭐
+          </span>
+        </div>
+        
+        <div class="card-body p-4">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="card-title fw-bold mb-0">{{ otel.ad }}</h5>
+          </div>
+          <p class="text-muted small mb-4">
+            <i class="bi bi-geo-alt-fill text-danger me-1"></i>{{ otel.konum }}
+          </p>
+          
+          <div class="d-flex justify-content-between align-items-center mt-auto border-top pt-3">
+            <div>
+              <span class="text-primary fw-bold fs-3">{{ otel.fiyat }} TL</span>
+              <small class="text-muted"> /gece</small>
+            </div>
+            <button class="btn btn-primary rounded-pill px-4 shadow-sm" 
+                    [routerLink]="['/hotel-detail', otel.id]">
+              İncele
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

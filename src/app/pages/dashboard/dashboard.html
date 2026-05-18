@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm p-3">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/dashboard" style="cursor: pointer;">
+      <i class="bi bi-airplane-fill me-2"></i>SEYAHAT PLANLA
+    </a>
+    <div class="ms-auto">
+      <ul class="navbar-nav align-items-center d-flex flex-row gap-2">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/dashboard" style="cursor: pointer;"><i class="bi bi-house-door me-1"></i> Ana Sayfa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/my-routes" routerLinkActive="active" style="cursor: pointer;">
+            <i class="bi bi-geo-alt me-1"></i> Rotalarım
+          </a>
+        </li>
+        
+        <li class="nav-item d-flex align-items-center ms-lg-3 gap-2">
+          <span class="badge bg-light text-primary rounded-pill px-3 py-2 fw-bold">
+            <i class="bi bi-person-circle me-1"></i> {{ userName }}
+          </span>
+          <button (click)="logout()" class="btn btn-danger btn-sm rounded-pill px-3 fw-bold shadow-sm">
+            <i class="bi bi-box-arrow-right"></i> Çıkış Yap
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero-section text-white text-center">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Dünyayı Keşfetmeye Hazır mısın?</h1>
+    <p class="lead mb-4 text-white">Senin için en iyi rotaları ve otelleri bulalım.</p>
+    
+    <div class="search-box mx-auto d-flex shadow-lg">
+      <input type="text" class="form-control py-3 border-0" placeholder="Nereye gitmek istersin?">
+      <button class="btn btn-warning px-4 fw-bold text-white">ARA</button>
+    </div>
+  </div>
+</header>
+
+<div class="container mt-5 pb-5">
+  <div class="row mb-4 text-center">
+    <div class="col-md-12">
+      <h2 class="fw-bold">Nereye Gitmek İstersin?</h2>
+      <p class="text-muted">Hayalindeki tatili planlamaya hemen başla.</p>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm hover-card">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=500" class="card-img-top" alt="Oteller">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-bold text-primary">Otelleri Keşfet</h5>
+          <p class="card-text text-muted">En konforlu ve bütçene uygun oteller burada.</p>
+          <button (click)="gitOtellere()" class="btn btn-primary w-100 mt-auto">Hemen Bul</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm hover-card">
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=500" class="card-img-top" alt="Rotalar">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-bold text-success">Yeni Rota Oluştur</h5>
+          <p class="card-text text-muted">Kendi gezi rehberini saniyeler içinde hazırla.</p>
+          <button routerLink="/new-route" class="btn btn-success w-100 rounded-pill py-2 fw-bold">
+            Plan Yap
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm hover-card">
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=500" class="card-img-top" alt="Keşfet">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-bold text-warning">Trend Destinasyonlar</h5>
+          <p class="card-text text-muted">Bu sezonun en popüler seyahat noktalarına göz at.</p>
+          <button (click)="gitTrendDestinasyonlara()" class="btn btn-warning w-100 text-white fw-bold mt-auto">Göz At</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

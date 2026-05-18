@@ -1,0 +1,33 @@
+<div class="detail-container" *ngIf="seciliOtel">
+  <button (click)="goBack()" class="btn btn-light shadow-sm rounded-pill px-3 mb-3">
+    <i class="bi bi-arrow-left"></i> Geri Dön
+  </button>
+
+  <div class="hotel-header">
+    <img [src]="seciliOtel.resim" [alt]="seciliOtel.ad" class="main-img">
+    <h1 class="fw-bold mt-3 text-dark">{{ seciliOtel.ad }}</h1>
+    <p class="location text-muted">📍 {{ seciliOtel.konum }}</p>
+  </div>
+
+  <div class="content p-4 bg-white rounded-4 shadow-sm border-0">
+    <h3 class="fw-bold text-dark">Otel Hakkında</h3>
+    <p class="text-secondary leading-relaxed">{{ seciliOtel.aciklama }}</p>
+    
+    <hr class="my-4 opacity-25">
+
+    <div class="info-footer d-flex justify-content-between align-items-center">
+      <div class="price-box">
+        <span class="fs-4 fw-bold text-success">{{ seciliOtel.fiyat }} TL</span>
+        <small class="text-muted ms-1">/ Gecelik</small>
+      </div>
+      
+      </div>
+  </div>
+</div>
+
+<div *ngIf="!seciliOtel" class="text-center py-5">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Yükleniyor...</span>
+  </div>
+  <p class="mt-2 text-muted">Otel bilgisi aranıyor...</p>
+</div>

@@ -1,0 +1,13 @@
+.card {
+  transition: transform 0.3s;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  border-bottom: 2px solid #f8f9fa;
+}

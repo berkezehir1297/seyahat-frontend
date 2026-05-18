@@ -1,0 +1,70 @@
+<div class="container mt-5 pb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <div class="card border-0 shadow-lg" style="border-radius: 25px; overflow: hidden;">
+        <div class="bg-primary p-4 text-center text-white">
+          <h3 class="fw-bold mb-0">✨ Yeni Macera Planla</h3>
+          <p class="small opacity-75">Hayallerindeki rotayı veri tabanına kaydet</p>
+        </div>
+        
+        <div class="card-body p-4">
+          <form (ngSubmit)="kaydet()">
+            <div class="mb-3">
+              <label class="form-label small fw-bold">ROTA ADI</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-0 rounded-start-pill"><i class="bi bi-pencil-fill"></i></span>
+                <input type="text" class="form-control bg-light border-0 rounded-end-pill" [(ngModel)]="yeniRota.title" name="title" placeholder="Örn: Ege Turu 2026" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold">GİDİLECEK ŞEHİR</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light border-0 rounded-start-pill"><i class="bi bi-geo-alt-fill"></i></span>
+                  <select class="form-select bg-light border-0 rounded-end-pill" [(ngModel)]="yeniRota.city" name="city" required>
+                    <option value="" disabled selected>Şehir Seçiniz</option>
+                    <option *ngFor="let sehir of sehirler" [value]="sehir">{{ sehir }}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold">KONAKLANACAK OTEL</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light border-0 rounded-start-pill"><i class="bi bi-building"></i></span>
+                  <select class="form-select bg-light border-0 rounded-end-pill" [(ngModel)]="yeniRota.hotel_name" name="hotel_name">
+                    <option value="" selected>Otel Seçiniz (Opsiyonel)</option>
+                    <option *ngFor="let otel of getFiltreliOteller()" [value]="otel.ad">{{ otel.ad }}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold">BAŞLANGIÇ TARİHİ</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-0 rounded-start-pill"><i class="bi bi-calendar-event"></i></span>
+                <input type="date" class="form-control bg-light border-0 rounded-end-pill" [(ngModel)]="yeniRota.start_date" name="start_date" required>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label small fw-bold">PLAN NOTLARI</label>
+              <textarea class="form-control bg-light border-0" [(ngModel)]="yeniRota.description" name="description" rows="3" style="border-radius: 15px;" placeholder="Gezilecek yerler, yemek durakları..."></textarea>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary btn-lg rounded-pill shadow-sm fw-bold">
+                Rotayı Oluştur
+              </button>
+              <button type="button" routerLink="/dashboard" class="btn btn-link text-muted text-decoration-none">
+                <i class="bi bi-arrow-left"></i> Vazgeç ve Dön
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
