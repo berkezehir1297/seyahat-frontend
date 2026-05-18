@@ -15,8 +15,7 @@ export class ForgotPasswordComponent {
   email: string = '';
   
   // API adresini bir değişkene almak her zaman daha güvenlidir
-  private apiUrl = 'http://127.0.0.1:8000/api/forgot-password';
-
+private apiUrl = 'https://seyahat-backend.onrender.com/api/forgot-password';
   constructor(private http: HttpClient) {}
 
   baglantiGonder() {
