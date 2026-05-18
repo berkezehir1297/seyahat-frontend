@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RouteService {
-  // Laravel backend adresin (Tek bir yerden yönetmek en iyisi)
-  private apiUrl = 'http://127.0.0.1:8000/api/travel-routes';
+  // Laravel backend adresin (Canlı sunucuya bağlandı)
+  private apiUrl = 'https://sahayat-backend.onrender.com/api/travel-routes';
 
   constructor(private http: HttpClient) { }
 
@@ -21,9 +21,8 @@ export class RouteService {
     return this.http.get<any[]>(`${this.apiUrl}/${userId}`);
   }
 
-  // 3. Rota Silme (BURAYI DÜZELTTİK)
+  // 3. Rota Silme
   deleteRoute(id: number): Observable<any> {
-    // Adresi apiUrl değişkeninden alarak 'travel-routes' olmasını sağladık
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
