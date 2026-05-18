@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class Seyahat {
   // Laravel projemizin çalıştığı API adresi
-  private apiUrl = 'http://127.0.0.1:8000/api';
+  private apiUrl = 'https://sahayat-backend.onrender.com/api';
 
   constructor(private http: HttpClient) {}
 
