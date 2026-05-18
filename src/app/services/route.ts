@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class RouteService {
   // Laravel backend adresin (Canlı sunucuya bağlandı)
-  private apiUrl = 'https://sahayat-backend.onrender.com/api/travel-routes';
+  private apiUrl = 'https://seyahat-backend.onrender.com/api/travel-routes';
 
   constructor(private http: HttpClient) { }
 
