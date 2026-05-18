@@ -42,8 +42,7 @@ export class ResetPasswordComponent implements OnInit {
       password: this.newPassword
     };
 
-    this.http.post('http://localhost:8000/api/reset-password', payload).subscribe({
-      next: (res: any) => {
+this.http.post('https://seyahat-backend.onrender.com/api/reset-password', payload).subscribe({      next: (res: any) => {
         alert('Şifreniz başarıyla güncellendi! Giriş yapabilirsiniz.');
         this.router.navigate(['/login']); // Başarılıysa giriş ekranına at
       },
